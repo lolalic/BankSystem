@@ -1,0 +1,27 @@
+# Ignore Visual Studio / VS Code settings
+.vscode/
+.idea/
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore auto-generated package files
+*.nupkg
+*.snupkg
+*.nuspec
+*.dgspec.json
+*.nuget.props
+*.nuget.targets
+*.cache
+project.assets.json
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
