@@ -1,0 +1,130 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankUI/BankUI.csproj": {}
+  },
+  "projects": {
+    "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/BankClassLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/BankClassLibrary.csproj",
+        "projectName": "BankClassLibrary",
+        "projectPath": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/BankClassLibrary.csproj",
+        "packagesPath": "/Users/lolalic/.nuget/packages/",
+        "outputPath": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lolalic/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankUI/BankUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankUI/BankUI.csproj",
+        "projectName": "BankUI",
+        "projectPath": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankUI/BankUI.csproj",
+        "packagesPath": "/Users/lolalic/.nuget/packages/",
+        "outputPath": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankUI/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/lolalic/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/BankClassLibrary.csproj": {
+                "projectPath": "/Users/lolalic/Documents/CJ/Nationwide/Academy/C#/Zoo/BankSystem/BankClassLibrary/BankClassLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
