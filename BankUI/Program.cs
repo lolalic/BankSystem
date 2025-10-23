@@ -1,12 +1,12 @@
 ﻿using BankClassLibrary;
 
-var acc = new Account();
-acc.AccountName = "Alice";
-acc.AccountNumber = "00123";
-acc.Credit(1500);
-acc.Debit(300);
+var acc = new Account
+{
+    AccountName = "Alice",
+    AccountNumber = "00123"
+};
+
+acc.Credit(1500m);
+acc.Debit(300m);
 
 Console.WriteLine(acc.ToString());
-
-
-
