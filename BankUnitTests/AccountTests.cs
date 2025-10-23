@@ -78,7 +78,7 @@ public class DerivedAccountTests
     {
         var cur = new CurrentAccount { AccountName = "X", AccountNumber = "1", OverdraftLimit = 300m };
         cur.Credit(100m);
-        cur.Debit(350m); // -> -250
+        cur.Debit(350m);
         Assert.AreEqual(-250m, cur.Balance);
     }
 
@@ -114,7 +114,6 @@ public class InterfacePolymorphismTests
         var list = new List<IAccount> { a1, a2, a3 };
         list.ForEach(a => a.Credit(100m));
 
-        // 统一接口调用
         foreach (var a in list)
         {
             Assert.AreEqual(100m, a.Balance);
@@ -133,7 +132,7 @@ public class InterfacePolymorphismTests
         Assert.IsTrue(acc.Balance < 0m);
 
         var cur = (CurrentAccount)acc;
-        cur.OverdraftLimit = 60m; // 允许到 -60
+        cur.OverdraftLimit = 60m;
 
         acc.Debit(15m);
         Assert.AreEqual(-55m, acc.Balance);

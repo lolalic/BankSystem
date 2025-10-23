@@ -26,17 +26,15 @@ public class Account : IAccount
 
     public string AccountNumber
     {
-        get => accountNumber;
+        get {return accountName;}
         set
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("Account number cannot be empty.", nameof(value));
 
-            // 仅数字
             if (!System.Text.RegularExpressions.Regex.IsMatch(value, @"^\d+$"))
                 throw new ArgumentException("Account number must contain digits only.", nameof(value));
 
-            // 规范固定位长
             if (value.Length < AccountNumberLength)
                 value = value.PadLeft(AccountNumberLength, '0');
             else if (value.Length > AccountNumberLength)

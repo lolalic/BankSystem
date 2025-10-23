@@ -6,7 +6,6 @@ namespace BankClassLibrary
     {
         public decimal OverdraftLimit { get; set; } = 200m;
 
-        
         public override void Debit(decimal amount)
         {
             if (amount <= 0)
