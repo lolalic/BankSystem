@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace BankClassLibrary;
 
-public class Account
+public class Account : IAccount
 {
     public const int AccountNumberLength = 10;
     public static string BankName = "Nationwide Demo Bank";
@@ -14,7 +14,7 @@ public class Account
 
     public string AccountName
     {
-        get => accountName;
+        get { return accountName;}
         set
         {
             if (string.IsNullOrWhiteSpace(value))
@@ -32,11 +32,11 @@ public class Account
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("Account number cannot be empty.", nameof(value));
 
-           
-            if (!Regex.IsMatch(value, @"^\d+$"))
+            // 仅数字
+            if (!System.Text.RegularExpressions.Regex.IsMatch(value, @"^\d+$"))
                 throw new ArgumentException("Account number must contain digits only.", nameof(value));
 
-           
+            // 规范固定位长
             if (value.Length < AccountNumberLength)
                 value = value.PadLeft(AccountNumberLength, '0');
             else if (value.Length > AccountNumberLength)
@@ -74,7 +74,7 @@ public class Account
 
     public override string ToString()
     {
-        var money = Balance.ToString("C2", CultureInfo.GetCultureInfo("en-GB"));
+        var money = Balance.ToString("C2", System.Globalization.CultureInfo.GetCultureInfo("en-GB"));
         return $"{BankName} | Account Name: {AccountName} | Account Number: {AccountNumber} | Balance: {money}";
     }
 }

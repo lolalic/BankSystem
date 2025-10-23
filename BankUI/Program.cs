@@ -31,18 +31,20 @@ sav.Credit(1000m);
 sav.ApplyMonthlyInterest(); 
 
 
-var accounts = new List<Account> { acc, cur, sav };
+List<IAccount> accounts = new() { acc, cur, sav };
 
-Console.WriteLine("\n--- Statements ---");
+Console.WriteLine("\n--- Statements (via IAccount) ---");
+
 foreach (var a in accounts)
 {
+    
+    a.Credit(1m); 
     Console.WriteLine(a); 
 }
 
-
 try
 {
-    cur.Debit(200m);
+    cur.Debit(200m); 
 }
 catch (Exception ex)
 {

@@ -1,6 +1,7 @@
 ﻿using BankClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace BankUnitTests;
 
@@ -96,5 +97,47 @@ public class DerivedAccountTests
         sav.Credit(1000m);
         sav.ApplyMonthlyInterest();
         Assert.AreEqual(1010m, sav.Balance); // 1000 * 1% = 10
+    }
+}
+
+
+[TestClass]
+public class InterfacePolymorphismTests
+{
+    [TestMethod]
+    public void ListOfIAccount_AllowsUnifiedOperations()
+    {
+        IAccount a1 = new Account { AccountName = "A", AccountNumber = "1" };
+        IAccount a2 = new CurrentAccount { AccountName = "B", AccountNumber = "2", };
+        IAccount a3 = new SavingsAccount { AccountName = "C", AccountNumber = "3", };
+
+        var list = new List<IAccount> { a1, a2, a3 };
+        list.ForEach(a => a.Credit(100m));
+
+        // 统一接口调用
+        foreach (var a in list)
+        {
+            Assert.AreEqual(100m, a.Balance);
+            Assert.IsTrue(a.TryDebit(50m));
+            Assert.AreEqual(50m, a.Balance);
+        }
+    }
+
+    [TestMethod]
+    public void CurrentAccount_Overdraft_ViaInterface()
+    {
+        IAccount acc = new CurrentAccount { AccountName = "Bob", AccountNumber = "2" };
+        acc.Credit(10m);
+        acc.Debit(50m);
+
+        Assert.IsTrue(acc.Balance < 0m);
+
+        var cur = (CurrentAccount)acc;
+        cur.OverdraftLimit = 60m; // 允许到 -60
+
+        acc.Debit(15m);
+        Assert.AreEqual(-55m, acc.Balance);
+
+        Assert.ThrowsException<InvalidOperationException>(() => acc.Debit(10m));
     }
 }
